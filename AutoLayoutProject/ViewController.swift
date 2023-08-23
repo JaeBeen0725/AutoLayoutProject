@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 let oneButton = UIButton()
-    
+let twoButotn = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -38,6 +38,24 @@ let oneButton = UIButton()
         
         present(vc, animated: true)
     }
+    
+    func goExampleTwo() {
+        view.addSubview(twoButotn)
+        twoButotn.translatesAutoresizingMaskIntoConstraints = false
+        twoButotn.backgroundColor = .blue
+        
+        twoButotn.addTarget(self, action: #selector(oneButtonClicked), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+        
+            twoButotn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            twoButotn.widthAnchor.constraint(equalToConstant: 300),
+            twoButotn.heightAnchor.constraint(equalToConstant: 50),
+            twoButotn.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+    
+    
     
     
 }
