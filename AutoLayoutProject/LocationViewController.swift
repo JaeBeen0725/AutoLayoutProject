@@ -31,7 +31,7 @@ class LocationViewController: UIViewController {
       // 37.519267, 126.889819
         
         let center = CLLocationCoordinate2D(latitude: 37.519267, longitude: 126.889819)
-      
+        setRegionAndAnnotation(center: center)
     }
     
     
@@ -44,7 +44,7 @@ class LocationViewController: UIViewController {
         
     }
     
-    func setRegionAndAnnotation() {
+    func setRegionAndAnnotation(center: CLLocationCoordinate2D) {
         let center = CLLocationCoordinate2D(latitude: 37.519267, longitude: 126.889819)
         
         let region = MKCoordinateRegion(center: center, latitudinalMeters: 100, longitudinalMeters: 100)
@@ -84,6 +84,9 @@ class LocationViewController: UIViewController {
         }
         
     }
+    
+    
+    
     
     func checkCurrentLocationAuthorization(status: CLAuthorizationStatus) {
         print("check", status)
