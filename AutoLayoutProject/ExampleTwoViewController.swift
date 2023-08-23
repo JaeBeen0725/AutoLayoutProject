@@ -310,7 +310,6 @@ class ExampleTwoViewController: UIViewController{
         view.addSubview(etName)
   
         etName.snp.makeConstraints { make in
-            
 
             make.height.equalTo(50)
             make.trailing.lessThanOrEqualTo(-20)
