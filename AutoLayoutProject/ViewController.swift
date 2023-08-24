@@ -6,15 +6,17 @@
 //
 
 import UIKit
-
+import SnapKit
 class ViewController: UIViewController {
 let oneButton = UIButton()
 let twoButotn = UIButton()
+    
+let movieButton = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
        
         goExampleOne()
-        
+        movieButtonsetting()
     }
 
     func goExampleOne() {
@@ -56,6 +58,30 @@ let twoButotn = UIButton()
     }
     
     
+    func movieButtonsetting() {
+        
+        view.addSubview(movieButton)
+        movieButton.backgroundColor = .brown
+        movieButton.titleLabel?.text = "MovieButton"
+        movieButton.snp.makeConstraints { make in
+            make.size.equalTo(100)
+            make.center.equalToSuperview()
+            
+            movieButton.addTarget(self, action: #selector(movieButtonClicked), for: .touchUpInside)
+        }
+        
+        
+    }
+    
+    @objc func movieButtonClicked() {
+        
+        let vc = MovieViewController()
+        vc.modalPresentationStyle = .fullScreen
+
+        present(vc, animated: true)
+        
+        
+    }
     
     
 }

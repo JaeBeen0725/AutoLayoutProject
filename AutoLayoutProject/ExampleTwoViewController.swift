@@ -254,7 +254,7 @@ class ExampleTwoViewController: UIViewController{
           
         }
         
-        
+        etKakaoStoryButton.backgroundColor = .brown
         view.addSubview(etKakaoStoryButton)
    
         etKakaoStoryButton.snp.makeConstraints { make in
@@ -264,11 +264,14 @@ class ExampleTwoViewController: UIViewController{
             make.centerY.equalTo(exampleTwoBottomView)
         }
         
+        etKakaoStoryButtonName.backgroundColor = .red
         view.addSubview(etKakaoStoryButtonName)
         etKakaoStoryButtonName.snp.makeConstraints { make in
 
-            make.centerX.equalTo(exampleTwoBottomView).offset(100)
-            make.centerY.equalTo(exampleTwoBottomView).offset(30)
+            make.centerX.equalTo(etKakaoStoryButton)
+            make.top.equalTo(etKakaoStoryButton.snp.bottom).offset(0)
+//            make.centerX.equalTo(exampleTwoBottomView).offset(100)
+//            make.centerY.equalTo(exampleTwoBottomView).offset(30)
          
           
         }
@@ -296,7 +299,7 @@ class ExampleTwoViewController: UIViewController{
     func statusSetupConstraints() {
         
         view.addSubview(etStatusMessage)
-     
+        etStatusMessage.backgroundColor = .lightGray
         etStatusMessage.snp.makeConstraints { make in
           
             make.height.equalTo(30)
@@ -308,14 +311,14 @@ class ExampleTwoViewController: UIViewController{
         }
         
         view.addSubview(etName)
-  
+        etName.backgroundColor = .blue
         etName.snp.makeConstraints { make in
 
             make.height.equalTo(50)
             make.trailing.lessThanOrEqualTo(-20)
             make.leading.greaterThanOrEqualTo(20)
             make.centerX.equalTo(mainView)
-            make.bottom.equalTo(etStatusMessage.snp.top).offset(-20)
+            make.bottom.equalTo(etStatusMessage.snp.top).offset(-10)
             //make.horizontalEdges.equalTo(view)
         }
         
