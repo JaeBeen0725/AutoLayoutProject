@@ -56,7 +56,7 @@ let movieButton = UIButton()
             twoButotn.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-    
+      
     
     func movieButtonsetting() {
         
